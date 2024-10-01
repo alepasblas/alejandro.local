@@ -12,7 +12,7 @@
                                 <li>
                                     <a class="gallery" href="<?php echo $imagen->getUrlGaleria() ?>" data-toggle="tooltip" data-original-title="Quick View">
                                         <i class="fa fa-eye"></i>
-                                    </a>
+                                    </a> 
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-original-title="Click if you like it">
