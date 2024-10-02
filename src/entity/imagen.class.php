@@ -11,7 +11,7 @@ class Imagen {
     private $numVisualizaciones;
     private $numLikes;
     private $numDownloads;
-
+  
 
     public function __construct($nombre = "", $descripcion = "", $categoria = "", $numVisualizaciones = 0, $numLikes = 0, $numDownloads = 0) {
         $this->nombre = $nombre;
