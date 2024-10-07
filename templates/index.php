@@ -1,4 +1,5 @@
 <?php require_once __DIR__ . "/../src/entity/imagen.class.php";
+require_once __DIR__ . "/../src/entity/asociado.class.php";
 
 
 $imagenes[] = new Imagen('1.jpg', 'Descripcion1', 1, 456, 610, 130);
@@ -14,6 +15,12 @@ $imagenes[] = new Imagen('10.jpg', 'Descripcion10', 1, 470, 600, 132);
 $imagenes[] = new Imagen('11.jpg', 'Descripcion11', 2, 465, 620, 128);
 $imagenes[] = new Imagen('12.jpg', 'Descripcion12', 3, 455, 605, 142);
 
+
+$asociados[] = new Asociado('Nombre1', 'Descripcion1', 'log1.jpg');
+$asociados[] = new Asociado('Nombre2', 'Descripcion2', 'log2.jpg');
+$asociados[] = new Asociado('Nombre3', 'Descripcion3', 'log3.jpg');
+$asociados[] = new Asociado('Nombre4', 'Descripcion4', 'log1.jpg');
+$asociados[] = new Asociado('Nombre5', 'Descripcion5', 'log2.jpg');
 
 
 require_once __DIR__ . "/views/index.view.php";

@@ -23,6 +23,9 @@ class Imagen {
         $this->numDownloads = $numDownloads;
     }
 
+    public function getId(): string {
+        return $this->id;
+    }
     public function getNombre(): string {
         return $this->nombre;
     }
