@@ -6,7 +6,6 @@ require_once __DIR__ . '/../src/entity/imagen.class.php';
 
 
 
-
 $errores = [];
 $titulo = "";
 $descripcion = "";

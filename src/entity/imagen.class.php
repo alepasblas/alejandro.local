@@ -5,6 +5,7 @@ class Imagen {
     const RUTA_IMAGENES_GALERIA = '/public/images/index/gallery/';
     const RUTA_IMAGENES_CLIENTES = '/public/images/clients/';
     const RUTA_IMAGENES_SUBIDAS = '/public/images/galeria/';
+    const RUTA_IMAGENES_ASOCIADOS = '/public/images/asociados/';
     private $id;
     private $nombre;
     private $descripcion;
@@ -97,6 +98,9 @@ class Imagen {
     }
     public function getUrlSubidas(): string {
         return self::RUTA_IMAGENES_SUBIDAS . $this->getNombre();
+    }
+    public function getUrlAsociados(): string {
+        return self::RUTA_IMAGENES_ASOCIADOS . $this->getNombre();
     }
     
     

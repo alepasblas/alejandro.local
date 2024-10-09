@@ -35,6 +35,10 @@
               <?php if (utils::esOpcionMenuActiva('/galeria.php')==true)
               echo '<li class="active lien">'; else echo '<li class=”0lien”>';?>
               <a href="galeria.php"><i class="fa fa-galeria sr-icons"></i> Galeria</a></li>
+
+              <?php if (utils::esOpcionMenuActiva('/asociados.php')==true)
+              echo '<li class="active lien">'; else echo '<li class=”0lien”>';?>
+              <a href="asociados.php"><i class="fa fa-asociados sr-icons"></i> Asociados</a></li>
             </ul>
          </div>
      </div>
