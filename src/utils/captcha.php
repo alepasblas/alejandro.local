@@ -17,7 +17,7 @@
     $ancho = abs($text_box[2] - $text_box[0]) + 10;
     $alto = abs($text_box[5] - $text_box[1]);
 
- 
+
     if ($captchaFontSize > 35) {
         $randomLineas = 10;
     } else {
