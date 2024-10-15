@@ -50,7 +50,7 @@ require_once __DIR__ . '/navegacion.part.php';
                 <div class="form-group">
                     <div class="col-xs-12">
                         <label class="label-control">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $nombre ?> " require>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $nombre ?> " required>
                         <label class="label-control">Descripción</label>
                         <textarea class="form-control" name="descripcion"><?= $descripcion ?></textarea>
                         <!-- CAPTCAHA -->
@@ -62,7 +62,41 @@ require_once __DIR__ . '/navegacion.part.php';
                 </div>
             </form>
             <hr class="divider">
+            <?php
+            // Asegúrate de que $asociados esté siempre inicializado
+            if (!isset($asociados)) {
+                $asociados = [];
+            }
+            ?>
+
             <div class="imagenes_asociados">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Logo</th>
+                            <th scope="col">Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($asociados as $asociado) : ?>
+                            <tr>
+                                <th scope="row"><?= $asociado->getId() ?></th>
+                                <td scope="row"><?= $asociado->getNombre() ?></td>
+                                <td>
+                                    <img src="<?= $asociado->getUrlAsociados() ?>"
+                                        alt="<?= $asociado->getDescripcion() ?>"
+                                        title="<?= $asociado->getDescripcion() ?>"
+                                        width="100px">
+                                </td>
+                                <td>
+                                    <?= $asociado->getDescripcion() ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

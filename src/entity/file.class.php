@@ -1,7 +1,8 @@
 <?php
 require_once __DIR__ . "/../exceptions/fileException.class.php";
+require_once __DIR__ . "/../../repository/imagenesRepository.php";
 
-class File
+class File implements IEntity
 {
     /**
      * param string $fileName
@@ -71,5 +72,12 @@ class File
             false
         )
             throw new FileException('No se puede mover el archivo a su destino');
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'file' => $this->getFileName(),
+        ];
     }
 }
