@@ -5,7 +5,7 @@ require_once __DIR__ . "/../../repository/imagenesRepository.php";
 class Asociado implements IEntity
 {
     
-    private $id = null;
+    private $id;
     private $nombre;
     private $logo;
     private $descripcion;
@@ -14,6 +14,7 @@ class Asociado implements IEntity
 
     public function __construct($nombre = "", $descripcion = "", $logo = "")
     {
+        $this->id= null;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
         $this->logo = $logo;
@@ -21,9 +22,9 @@ class Asociado implements IEntity
 
     public function getUrlAsociados(): string
     {
-        return self::RUTA_LOGOS_ASOCIADOS . $this->getLogo();
+        return self::RUTA_LOGOS_ASOCIADOS . $this->getNombre();
     }
-    public function getId(): string
+    public function getId()
     {
         return $this->id;
     }

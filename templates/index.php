@@ -1,7 +1,6 @@
 <?php require_once __DIR__ . "/../src/entity/imagen.class.php";
 require_once __DIR__ . "/../src/entity/asociado.class.php";
-require_once __DIR__ . '/../src/entity/imagen.class.php';
-require_once __DIR__ . '/../src/entity/asociado.class.php';
+
 
 
 $imagenes[] = new Imagen('1.jpg', 'Descripcion1', 1, 456, 610, 130);

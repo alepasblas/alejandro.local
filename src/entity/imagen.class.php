@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . "/../database/queryBuilder.class.php";
+
 class Imagen  implements IEntity
 {
 
@@ -14,6 +16,7 @@ class Imagen  implements IEntity
     private $numVisualizaciones;
     private $numLikes;
     private $numDownloads;
+    
 
 
     public function __construct($nombre = "", $descripcion = "", $categoria = "", $numVisualizaciones = 0, $numLikes = 0, $numDownloads = 0)

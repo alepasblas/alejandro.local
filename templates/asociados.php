@@ -24,6 +24,7 @@ try {
     App::bind('config',$config); // Guardamos la configuración en el contenedor de servicios
     $conexion = App::getConnection();
     
+    $asociadosRepository= new AsociadosRepository();
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -36,26 +37,9 @@ try {
             $imagen->saveUploadFile(Imagen::RUTA_IMAGENES_ASOCIADOS);
 
             $asociados = new Asociado($imagen->getFileName(),$descripcion);
-            $imagenesRepository->save($asociados);
+            $asociadosRepository->save($asociados);
 
 
-            $conexion = Connection::make($config['database']);
-            $sql = "INSERT INTO asociados (nombre, descripcion, logo) VALUES (:nombre, :descripcion, :logo)";
-            $pdoStatement = $conexion->prepare($sql);
-            $parametros = [
-                ':nombre' => $imagen->getFileName(),
-                ':descripcion' => $descripcion,
-                ':logo' => $imagen->getFileName()
-            ];
-
-            if ($pdoStatement->execute($parametros) === false) {
-                $errores[] = "No se ha podido guardar la imagen en la base de datos";
-            } else {
-                $descripcion = "";
-                $mensaje = "Se ha guardado la imagen correctamente";
-                $asociados = $imagenesRepository->findAll();
-
-            }
         } else {
             $mensaje = "Nombre obligatorio";
         }
