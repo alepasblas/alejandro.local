@@ -22,30 +22,9 @@ $mensaje = "";
 
 try {
     $conexion = App::getConnection();
-    
-    $asociadosRepository= new AsociadosRepository();
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-        $nombre = trim(htmlspecialchars($_POST['nombre']));
-
-        if ($nombre != null) {
-            $descripcion = trim(htmlspecialchars($_POST['descripcion']));
-            $tiposAceptados = ['image/jpeg', 'image/gif', 'image/png'];
-            $imagen = new File('imagen', $tiposAceptados);
-            $imagen->saveUploadFile(Imagen::RUTA_IMAGENES_ASOCIADOS);
-
-            $asociados = new Asociado($imagen->getFileName(),$descripcion);
-            $asociadosRepository->save($asociados);
-
-
-        } else {
-            $mensaje = "Nombre obligatorio";
-        }
-
-        
-    }
     $asociadoRepo = new AsociadosRepository();
+
     $asociados = $asociadoRepo->findAll();
 
 } catch (FileException $fileException) {

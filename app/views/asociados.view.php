@@ -39,7 +39,7 @@ require_once __DIR__ . '/navegacion.part.php';
             <?php endif; ?>
             <!-- Formulario que permite subir una imagen con su descripción -->
             <!-- Hay que indicar OBLIGATORIAMENTE enctype="multipart/form-data" para enviar ficheros al servidor -->
-            <form clas="form-horizontal" action="<?= $_SERVER['PHP_SELF'] ?>" method="post"
+            <form clas="form-horizontal" action="/asociados/nueva" method="post"
                 enctype="multipart/form-data">
                 <div class="form-group">
                     <div class="col-xs-12">
@@ -53,11 +53,11 @@ require_once __DIR__ . '/navegacion.part.php';
                         <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $nombre ?> " required>
                         <label class="label-control">Descripción</label>
                         <textarea class="form-control" name="descripcion"><?= $descripcion ?></textarea>
-                        <!-- CAPTCAHA -->
+                        <!-- CAPTCAHA
                         <label class="label-control">Introduce el captcha <img style="border: 1px solid #D3D0D0 "
                                 src="../../src/utils/captcha.php" id='captcha'></label>
-                        <input class="form-control" type="text" name="captcha">
-                        <button class="pull-right btn btn-lg sr-button">ENVIAR</button>
+                        <input class="form-control" type="text" name="captcha">-->
+                        <button class="pull-right btn btn-lg sr-button">ENVIAR</button> 
                     </div>
                 </div>
             </form>
