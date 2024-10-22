@@ -1,6 +1,6 @@
 <?php
-      require_once __DIR__ . '/../index.php';
-      require_once __DIR__ . '/../../src/utils/utils.class.php';
+      require_once __DIR__ . '../index.php';
+      require_once __DIR__ . '../../src/utils/utils.class.php';
 ?>
 <div class="last-box row">
   <div class="col-xs-12 col-sm-4 col-sm-push-4 last-block">

@@ -1,5 +1,5 @@
-<?php require_once __DIR__ . "/../src/entity/imagen.class.php";
-require_once __DIR__ . "/../src/entity/asociado.class.php";
+<?php require_once __DIR__ . "/../../src/entity/imagen.class.php";
+require_once __DIR__ . "/../../src/entity/asociado.class.php";
 
 
 
@@ -28,4 +28,4 @@ $asociados[] = new Asociado('Nombre5', 'Descripcion5', 'log2.jpg');
 
 
 
-require_once __DIR__ . "/views/index.view.php";
+require_once __DIR__ . "/../views/index.view.php";

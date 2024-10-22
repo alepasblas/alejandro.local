@@ -2,12 +2,13 @@
 session_start();
 
 
-require_once __DIR__ . "/../src/entity/file.class.php";
-require_once __DIR__ . '/../src/exceptions/fileException.class.php';
-require_once __DIR__ . '/../src/entity/imagen.class.php';
-require_once __DIR__ . '/../src/entity/asociado.class.php';
-require_once __DIR__ . '/../src/database/connection.class.php';
-require_once __DIR__ . '/../repository/asociadosRepository.php';
+require_once __DIR__ . "/../../src/entity/file.class.php";
+require_once __DIR__ . '/../../src/exceptions/fileException.class.php';
+require_once __DIR__ . '/../../src/entity/imagen.class.php';
+require_once __DIR__ . '/../../src/entity/asociado.class.php';
+require_once __DIR__ . '/../../src/database/connection.class.php';
+require_once __DIR__ . '/../../repository/asociadosRepository.php';
+require_once __DIR__ . '/../../core/bootstrap.php';
 
 
 
@@ -20,8 +21,6 @@ $mensaje = "";
 
 
 try {
-    $config = require_once __DIR__ . '/../app/config.php';
-    App::bind('config',$config); // Guardamos la configuración en el contenedor de servicios
     $conexion = App::getConnection();
     
     $asociadosRepository= new AsociadosRepository();
@@ -78,4 +77,4 @@ try {
 // }
 
 
-require_once __DIR__ . "/views/asociados.view.php";
+require_once __DIR__ . "/../views/asociados.view.php";
