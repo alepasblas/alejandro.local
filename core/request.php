@@ -1,4 +1,6 @@
 <?php
+namespace alejandro\core;
+
 class Request
 {
     public static function uri()

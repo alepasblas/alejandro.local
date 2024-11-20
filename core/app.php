@@ -1,6 +1,11 @@
 <?php
-require_once __DIR__ . '/../src/exceptions/appException.class.php';
-require_once __DIR__ . '/../src/database/connection.class.php';
+
+namespace alejandro\core;
+
+use alejandro\core\database\Connection;
+use alejandro\app\exceptions\AppException;
+use alejandro\core\database\QueryBuilder;
+
 class App
 {
     /**
@@ -35,5 +40,13 @@ class App
         if (!array_key_exists('connection', static::$container))
             static::$container['connection'] = Connection::make();
         return static::$container['connection'];
+    }
+
+    public static function getRepository(string $className): QueryBuilder
+    {
+        if (! array_key_exists($className, static::$container))
+            static::$container[$className] = new $className();
+
+        return static::$container[$className];
     }
 }

@@ -1,11 +1,11 @@
 <div id="category<?php $idCategoria ?>" class="tab-pane active">
     <div class="row popup-gallery">
         <?php
-        foreach ($imagenes as $imagen) {
+        foreach ($imagenGaleria as $imagen) {
         ?>
             <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="sol">
-                    <img class="img-responsive" src="<?php echo $imagen->getUrlPortfolio() ?>" alt="<?php echo $imagen->getDescripcion() ?>">
+                    <img class="img-responsive" src="<?php echo $imagen->getUrlSubidas() ?>" alt="<?php echo $imagen->getDescripcion() ?>">
                     <div class="behind">
                         <div class="head text-center">
                             <ul class="list-inline">

@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . '/../../src/utils/utils.class.php';
+
+use alejandro\app\utils\Utils;
 ?>
 <nav class="navbar navbar-fixed-top navbar-default">
   <div class="container">
@@ -16,6 +17,7 @@ require_once __DIR__ . '/../../src/utils/utils.class.php';
     </div>
     <div class="collapse navbar-collapse navbar-right" id="menu">
       <ul class="nav navbar-nav">
+
         <?php if (utils::esOpcionMenuActiva('/') == true)
           echo '<li class="active lien">';
         else echo '<li class=”0lien”>'; ?>
@@ -35,15 +37,37 @@ require_once __DIR__ . '/../../src/utils/utils.class.php';
         else echo '<li class=”0lien”>'; ?>
         <a href="/contact"><i class="fa fa-phone-square sr-icons"></i> Contact</a></li>
 
-        <?php if (utils::esOpcionMenuActiva('/galeria') == true)
-          echo '<li class="active lien">';
-        else echo '<li class=”0lien”>'; ?>
-        <a href="/galeria"><i class="fa fa-galeria sr-icons"></i> Galeria</a></li>
 
-        <?php if (utils::esOpcionMenuActiva('/asociados') == true)
-          echo '<li class="active lien">';
-        else echo '<li class=”0lien”>'; ?>
-        <a href="/asociados"><i class="fa fa-asociados sr-icons"></i> Asociados</a></li>
+
+        <?php if (is_null($app['user'])) : ?>
+          <?php if (Utils::esOpcionMenuActiva('/login') == true) echo '<li class="active lien">';
+          else echo '<li class=" lien">'; ?>
+          <a href="/login"><i class="fa fa-user-secret sr-icons"></i> Login</a></li>
+        <?php else : ?>
+
+
+          <?php if (utils::esOpcionMenuActiva('/galeria') == true)
+            echo '<li class="active lien">';
+          else echo '<li class=”0lien”>'; ?>
+          <a href="/galeria"><i class="fa fa-galeria sr-icons"></i> Galeria</a></li>
+
+          <?php if (utils::esOpcionMenuActiva('/asociados') == true)
+            echo '<li class="active lien">';
+          else echo '<li class=”0lien”>'; ?>
+          <a href="/asociados"><i class="fa fa-asociados sr-icons"></i> Asociados</a></li>
+
+
+
+          <?php if (Utils::esOpcionMenuActiva('/logout') == true) echo '<li class="active lien">';
+          else echo '<li class=" lien">'; ?>
+          <a href="/logout"><i class="fa fa-sign-out sr-icons"></i> <?= $app['user']->getUsername() ?></a></li>
+        <?php endif; ?>
+
+        <li class="<?= Utils::esOpcionMenuActiva('/registro') ? 'active' : '' ?> lien">
+          <a href="<?= Utils::esOpcionMenuActiva('/registro') ? '#' : '/registro' ?>">
+            <i class="fa fa-sign-in sr-icons"></i> Registro</a>
+        </li>
+
       </ul>
     </div>
   </div>

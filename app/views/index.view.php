@@ -55,7 +55,7 @@
 
           <?php
             $idCategoria=1;
-            shuffle($imagenes);
+            shuffle($imagenGaleria);
             require_once __DIR__ . '/index.part.view.php';
           ?>
 
@@ -68,7 +68,7 @@
 
           <?php
             $idCategoria=2;
-            shuffle($imagenes);
+            shuffle($imagenGaleria);
             require_once __DIR__ . '/index.part.view.php';
           ?>
  
@@ -79,7 +79,7 @@
 
           <?php
             $idCategoria=3;
-            shuffle($imagenes);
+            shuffle($imagenGaleria);
             require_once __DIR__ . '/index.part.view.php';
           ?>
 
@@ -107,7 +107,9 @@
 
     <!-- Box within partners name and logo -->
     <?php
-      require_once __DIR__ . '/index.part.view.php';
+
+      require_once __DIR__ . '/indexLogos.part.view.php';
+
     ?>
     <!-- End of Box within partners name and logo -->
 

@@ -101,5 +101,3 @@ require_once __DIR__ . '/navegacion.part.php';
         </div>
     </div>
 </div>
-<?php
-require_once __DIR__ . '/fin.part.php';

@@ -138,11 +138,6 @@
    </div>
 <!-- End of principal content -->
 
-   <!-- Footer -->
-
-  <?php
-    require_once __DIR__ . '/fin.part.php';
-  ?>
 
 </body>
 </html>
